@@ -1,0 +1,30 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "Item",
+      "field": "name",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Item",
+      "field": "shop",
+      "arity": "Required"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Item",
+      "field": "currentPrice",
+      "arity": "Required"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "PriceMap",
+      "field": "price",
+      "arity": "Required"
+    }
+  ]
+}

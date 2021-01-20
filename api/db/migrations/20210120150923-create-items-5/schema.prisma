@@ -1,19 +1,11 @@
 datasource DB  {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
   provider      = "prisma-client-js"
   binaryTargets = "native"
-}
-
-model PriceMap {
-  id        Int      @id @default(autoincrement())
-  price   Float
-  date  DateTime @default(now())
-  item Item? @relation(fields: [itemId], references: [id])
-  itemId  Int?
 }
 
 model Item {
@@ -22,4 +14,13 @@ model Item {
   name String
   currentPrice Float
   priceMap PriceMap[]
+}
+
+
+model PriceMap {
+  id        Int      @id @default(autoincrement())
+  price   Float
+  Date  DateTime
+  item Item? @relation(fields: [itemId], references: [id])
+  itemId  Int?
 }
