@@ -1,6 +1,8 @@
 import {Form, Label, TextAreaField, Submit, useQuery} from "@redwoodjs/web";
 import ItemsCell from "src/components/ItemsCell/ItemsCell";
 import {useState} from "react";
+import axios from 'axios';
+import React from "react";
 
 const QUERY = gql`
   query FIND_ITEM_BY_ID($name: String!) {
@@ -8,6 +10,7 @@ const QUERY = gql`
       id
       name
       shop
+      url
       currentPrice
       priceMap {
         id
@@ -20,12 +23,18 @@ const QUERY = gql`
 
 const SearchCell = (props) => {
   const [formState, setFormState] = useState({
-    name: ""
+    name: "",
+    results: []
   });
 
   const {loading, error, data} = useQuery(QUERY, {
     variables: {name: formState.name}
   })
+
+  async function getInfo(url) {
+    const response = await axios.get(url)
+    return response.data?.results[0]
+  }
 
   return (
     <div className="form-group">
@@ -41,15 +50,18 @@ const SearchCell = (props) => {
         className="form-control"
         placeholder="Поиск"
       />
+
       <div>
-        {data?.item?.map(it => (
+        {data?.item?.map((it, index) => (
           <ul>
-            <li>
-              <p>{it.name}</p>
-              <p>{it.currentPrice}</p>
-              <p>{it.shop}</p>
-              {it.priceMap.map(i => (
-                <div>
+            <li key={index}>
+              <p>Магазин: {it.shop} Товар: {it.name}</p>
+              <div>
+                {getInfo(it.url)}
+              </div>
+              График
+              {it.priceMap.map((i, ind) => (
+                <div key={ind}>
                   <p>{i.price}</p>
                   <p>{i.date}</p>
                 </div>

@@ -1,0 +1,46 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "UpdateArgument",
+      "location": {
+        "tag": "Source",
+        "source": "DB"
+      },
+      "argument": "provider",
+      "newValue": "[\"sqlite\", \"postgresql\"]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Item",
+      "field": "url",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Item",
+          "field": "url"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Item",
+          "field": "url"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "\"1\""
+    }
+  ]
+}

@@ -7,9 +7,10 @@ export const schema = gql`
 
   type Item {
     id: Int!
-    name: String!,
+    name: String!
     shop: String!
     currentPrice: Float!
+    url: String!
     priceMap: [PriceMap!]!
   }
 
