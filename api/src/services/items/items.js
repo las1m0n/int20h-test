@@ -4,7 +4,7 @@ export const item = ({ name }) => {
   return db.item.findMany({
     where: {
       name: {
-        equals: name
+        equals: name.toLowerCase()
       }
     },
     include: {

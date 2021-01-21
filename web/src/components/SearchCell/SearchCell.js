@@ -1,6 +1,6 @@
 import {Form, Label, TextAreaField, Submit, useQuery} from "@redwoodjs/web";
 import ItemsCell from "src/components/ItemsCell/ItemsCell";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import axios from 'axios';
 import React from "react";
 
@@ -21,6 +21,11 @@ const QUERY = gql`
   }
 `
 
+const getInfo = () => {
+  axios.get(url)
+  return response.data?.results[0]
+}
+
 const SearchCell = (props) => {
   const [formState, setFormState] = useState({
     name: "",
@@ -31,10 +36,11 @@ const SearchCell = (props) => {
     variables: {name: formState.name}
   })
 
-  async function getInfo(url) {
-    const response = await axios.get(url)
-    return response.data?.results[0]
-  }
+  useEffect(() => {
+    // Оновлюємо заголовок документа, використовуючи API браузера
+
+  }, []);
+
 
   return (
     <div className="form-group">
@@ -56,9 +62,6 @@ const SearchCell = (props) => {
           <ul>
             <li key={index}>
               <p>Магазин: {it.shop} Товар: {it.name}</p>
-              <div>
-                {getInfo(it.url)}
-              </div>
               График
               {it.priceMap.map((i, ind) => (
                 <div key={ind}>
