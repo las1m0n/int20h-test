@@ -1,8 +1,8 @@
-import Item from 'src/components/Item/Item'
+import ItemSelect from "src/components/ItemSelect/ItemSelect";
 
 export const QUERY = gql`
-  query {
-    items {
+  query FIND_BY_ID ($id: Int!) {
+    item(id: $id) {
       id
       name
       about
@@ -28,8 +28,8 @@ export const Loading = () => <div>Loading...</div>
 
 export const Empty = () => <div>Empty</div>
 
-export const Failure = ({error}) => <div>Error: {error.message}</div>
+export const Failure = ({error}) => <div>Error</div>
 
-export const Success = ({items}) => {
-  return items.map((item) => <Item key={item.id} item={item} />)
+export const Success = ({item}) => {
+  return <ItemSelect item={item}/>
 }

@@ -1,0 +1,206 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateModel",
+      "model": "Shop"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Shop",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Shop",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Shop",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Shop",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Shop",
+      "field": "name",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Shop",
+      "field": "imageUrl",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateModel",
+      "model": "ShopItem"
+    },
+    {
+      "tag": "CreateField",
+      "model": "ShopItem",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "ShopItem",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "ShopItem",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "ShopItem",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "ShopItem",
+      "field": "shop",
+      "type": "Shop",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "ShopItem",
+      "field": "url",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "ShopItem",
+          "field": "url"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "ShopItem",
+          "field": "url"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "\"google.com\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "Item",
+      "field": "about",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Item",
+          "field": "about"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Item",
+          "field": "about"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "\"Product\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "Item",
+      "field": "priceInfo",
+      "type": "ShopItem",
+      "arity": "List"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Item",
+      "field": "shop"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Item",
+      "field": "currentPrice"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Item",
+      "field": "url"
+    }
+  ]
+}

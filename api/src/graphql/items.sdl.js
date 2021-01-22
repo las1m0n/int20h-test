@@ -5,16 +5,29 @@ export const schema = gql`
     date: DateTime
   }
 
+  type Shop {
+    id: Int!
+    name: String!
+    imageUrl: String!
+  }
+
+  type ShopItem {
+    id: Int!
+    shop: Shop!
+    url: String
+  }
+
   type Item {
     id: Int!
     name: String!
-    shop: String!
-    currentPrice: Float!
-    url: String!
+    about: String!
+    priceInfo: [ShopItem!]!
     priceMap: [PriceMap!]!
   }
 
   type Query {
-    item(name: String!): [Item!]!
+    findItem(name: String!): [Item!]!
+    item(id: Int!): Item
+    items: [Item!]!
   }
 `

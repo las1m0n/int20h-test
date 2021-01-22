@@ -59,8 +59,8 @@ const SearchCell = (props) => {
 
       <div>
         {data?.item?.map((it, index) => (
-          <ul>
-            <li key={index}>
+          <ul key={index}>
+            <li>
               <p>Магазин: {it.shop} Товар: {it.name}</p>
               График
               {it.priceMap.map((i, ind) => (

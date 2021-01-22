@@ -6,7 +6,11 @@ import React from 'react';
 const HomePage = () => {
   return (
     <AppLayout>
-      <SearchCell />
+      <div className="container">
+        <div className="row pt-3">
+          <ItemsCell/>
+        </div>
+      </div>
     </AppLayout>
   )
 }
