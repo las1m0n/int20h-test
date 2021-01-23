@@ -19,12 +19,13 @@ const PriceInfo = ({info}) => {
     getShopResults(info.url).then(results => {
       setResState({results})
     })
-    },[]);
+  }, []);
 
   return (
     <div>
       <ul>
-        {resState.results.map((item, i) => (
+        {console.log(resState.results)}
+        {resState.results.slice(0, 1).map((item, i) => (
           <li key={i}>{item.title} по цене <strong>{item.price}</strong></li>
         ))}
       </ul>
