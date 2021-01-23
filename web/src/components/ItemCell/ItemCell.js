@@ -6,6 +6,7 @@ export const QUERY = gql`
       id
       name
       about
+      image
       priceInfo {
         id
         url

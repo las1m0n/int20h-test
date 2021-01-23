@@ -21,6 +21,7 @@ export const schema = gql`
     id: Int!
     name: String!
     about: String!
+    image: String!
     priceInfo: [ShopItem!]!
     priceMap: [PriceMap!]!
   }

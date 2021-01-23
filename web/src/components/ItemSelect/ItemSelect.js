@@ -1,3 +1,5 @@
+import PriceInfo from "src/components/PriceInfo/PriceInfo";
+
 const ItemSelect = ({item}) => {
   return (
     <div>
@@ -11,19 +13,18 @@ const ItemSelect = ({item}) => {
             <div
               className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <div className="col-auto d-none d-lg-block">
-                <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                     role="img"
-                     aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                </svg>
+                <img alt="" src={item.image} style={{width: "64px"}}/>
               </div>
               <div className="col p-4 d-flex flex-column position-static">
                 <strong className="d-inline-block mb-2 text-primary"></strong>
                 <h3 className="mb-0">{item.name}</h3>
                 <p className="card-text mb-auto">Описание товара</p>
-                <p className="card-text mb-auto">Цены из супермаркетов</p>
+                {item.priceInfo.map((item, i) => (
+                  <div key={i}>
+                    <img alt="img" src={item.shop.imageUrl} style={{width: "80px", height: "30px"}}/>
+                    <PriceInfo info={item}/>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
