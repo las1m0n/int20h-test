@@ -2,9 +2,9 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 
 const getShopResults = (url) =>
-  axios.get(url, {headers: {
+  axios.get(url+`.`, {headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true
+      'Access-Control-Allow-Credentials': "localhost:8911"
     }}).then(res =>
     res.data?.results.map(({title, price}) => ({
       title,
