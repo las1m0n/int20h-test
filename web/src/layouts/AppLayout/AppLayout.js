@@ -9,7 +9,7 @@ const AppLayout = ({ children }) => {
   return (
     <div className="app-container">
       <header>
-        <h1>ЦеноСравнель</h1>
+        <Link to={routes.home()}><h1>ЦеноСравнитель</h1></Link>
       </header>
       <main>
         <input
@@ -34,6 +34,8 @@ const AppLayout = ({ children }) => {
           }}
           strokeColor="#1EB763"
         />
+
+        <h4>Топ-товары</h4>
 
         {children}
       </main>

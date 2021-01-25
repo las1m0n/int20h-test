@@ -1,0 +1,31 @@
+.text-item {
+  margin-top: 5px;
+  justify-content: center;
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  outline: none;
+  text-decoration: none;
+}
+
+.app-container {
+  padding: var(--padding-m);
+  margin: 0 25%;
+  background: linear-gradient(to right, var(--color-bg) 50%, var(--color-bg-secondary) 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-border{
+  margin-top: 5px;
+  border: 1px solid var(--color-primary);
+}

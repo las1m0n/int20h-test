@@ -8,9 +8,14 @@
     flex-direction: column;
 }
 
-h1 {
+h1, h4 {
     color: var(--color-primary);
     font-family: var(--font-primary);
+}
+
+a {
+  outline: none;
+  text-decoration: none;
 }
 
 main {

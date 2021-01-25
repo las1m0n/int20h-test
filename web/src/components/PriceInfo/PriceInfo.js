@@ -10,10 +10,12 @@ const getShopResults = (url) =>
   )
 
 
+
 const PriceInfo = ({info}) => {
   const [resState, setResState] = useState({
     results: []
   })
+
 
   useEffect(() => {
     getShopResults(info.url).then(results => {
@@ -25,7 +27,7 @@ const PriceInfo = ({info}) => {
     <div>
       <ul>
         {resState.results.slice(0, 1).map((item, i) => (
-          <li key={i}>{item.title} по цене <strong>{item.price}</strong></li>
+          <p>{item.title} по цене <strong>{item.price.toString().substr(0, 2).concat(".", item.price.toString().substr(3))}</strong></p>
         ))}
       </ul>
     </div>

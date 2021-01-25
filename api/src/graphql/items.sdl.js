@@ -2,7 +2,7 @@ export const schema = gql`
   type PriceMap {
     id: Int!
     price: Float!
-    date: DateTime
+    date: String
   }
 
   type Shop {
