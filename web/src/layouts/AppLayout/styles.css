@@ -1,0 +1,39 @@
+.app-container {
+    padding: var(--padding-m);
+    margin: 0 25%;
+    background: linear-gradient(to right, var(--color-bg) 50%, var(--color-bg-secondary) 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    font-size: 12px;
+    width: 100%;
+    font-family: var(--font-secondary);
+    color: var(--color-secondary);
+    background-color: var(--color-bg);
+    padding: var(--padding-s);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    margin: var(--padding-s);
+    text-align: center;
+}
+
+.search-bar:focus {
+    outline: 1px solid var(--color-primary);
+}

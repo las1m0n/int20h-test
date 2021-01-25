@@ -1,28 +1,43 @@
-import {Link, routes} from '@redwoodjs/router'
+import { Link, routes } from '@redwoodjs/router'
+import { useState } from 'react'
+import UseAnimation from 'react-useanimations'
+import searchToX from 'react-useanimations/lib/searchToX'
+import './styles.css'
 
-const AppLayout = ({children}) => {
+const AppLayout = ({ children }) => {
+  const [searchPhrase, setSearchPhrase] = useState('')
   return (
-    <>
+    <div className="app-container">
       <header>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link className="navbar-brand" to={routes.home()}>int20h Hackathon</Link>
-          <div className="collapse navbar-collapse" id="navbarColor01">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <Link className="nav-link" to={routes.home()}>Home<span className="sr-only">(current)</span></Link>
-              </li>
-            </ul>
-            <form className="form-inline">
-              <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button className="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div>
-        </nav>
+        <h1>ЦеноСравнель</h1>
       </header>
       <main>
+        <input
+          value={searchPhrase}
+          onChange={(e) => setSearchPhrase(e.target.value)}
+          className="search-bar"
+          placeholder="Крупа гречаная"
+        />
+        <UseAnimation
+          onClick={() => {
+            if (searchPhrase) setSearchPhrase('')
+            else {
+              //handleSearch
+            }
+          }}
+          size={14}
+          animation={searchToX}
+          wrapperStyle={{
+            position: 'absolute',
+            right: 4,
+            top: 16
+          }}
+          strokeColor="#1EB763"
+        />
+
         {children}
       </main>
-    </>
+    </div>
   )
 }
 

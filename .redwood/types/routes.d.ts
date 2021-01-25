@@ -6,10 +6,10 @@ home: () => "/"
               }
             }
 
-            import type FatalErrorPageType from 'C:\Users\bonda\WebstormProjects\int20h\hakaton\web\src\pages\FatalErrorPage\FatalErrorPage'
-import type HomePageType from 'C:\Users\bonda\WebstormProjects\int20h\hakaton\web\src\pages\HomePage\HomePage'
-import type ItemPagePageType from 'C:\Users\bonda\WebstormProjects\int20h\hakaton\web\src\pages\ItemPagePage\ItemPagePage'
-import type NotFoundPageType from 'C:\Users\bonda\WebstormProjects\int20h\hakaton\web\src\pages\NotFoundPage\NotFoundPage'
+            import type FatalErrorPageType from 'D:\work\int20h-test\web\src\pages\FatalErrorPage\FatalErrorPage'
+import type HomePageType from 'D:\work\int20h-test\web\src\pages\HomePage\HomePage'
+import type ItemPagePageType from 'D:\work\int20h-test\web\src\pages\ItemPagePage\ItemPagePage'
+import type NotFoundPageType from 'D:\work\int20h-test\web\src\pages\NotFoundPage\NotFoundPage'
             declare global {
               const FatalErrorPage: typeof FatalErrorPageType
 const HomePage: typeof HomePageType
