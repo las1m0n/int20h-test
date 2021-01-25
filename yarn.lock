@@ -10447,6 +10447,11 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-web@^5.5.7:
+  version "5.7.6"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.7.6.tgz#f20e5555ff120dc1e07ba53adb40061e822f3c48"
+  integrity sha512-qn/KYMI4QQvFDhtoxs0RPkn9uZKhDB9keE5BKgbJlSRfNEZpRiDlwBE9ibYz4nPhbyE+NUlt8IRIVR7g5OSX3w==
+
 lower-case@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-2.0.2.tgz#6fa237c63dbdc4a82ca0fd882e4722dc5e634e28"
@@ -12477,6 +12482,13 @@ react-textarea-autosize@^7.1.0:
   dependencies:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.0"
+
+react-useanimations@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/react-useanimations/-/react-useanimations-2.0.6.tgz#bb102da248363190ab7c629526237ae9dcdbc90b"
+  integrity sha512-sN7Wt3pcuo2hoptJnrdjL3/9bUvpqUBBwPK4FOgdKM3ht6ogmRY9Yi2lBymyNLWaVxf8vfnqzPTdN76cmNRGCA==
+  dependencies:
+    lottie-web "^5.5.7"
 
 react@^16.13.1, react@^16.8.3:
   version "16.14.0"

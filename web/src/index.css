@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap');
+
+:root {
+    --font-primary: 'Kelly Slab', cursive;
+    --font-secondary: 'Alegreya SC', serif;
+    --color-primary: #1EB763;
+    --color-secondary: #01BB5A;
+    --color-bg: white;
+    --color-bg-secondary: #F5F6F7;
+    --color-text-primary: #2C312C;
+    --color-text-secondary: #969F9D;
+    --padding-s: 8px;
+    --padding-m: 16px;
+    --padding-l: 32px;
+}
+
+body {
+    background-color: var(--color-primary);
+}
